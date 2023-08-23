@@ -45,16 +45,16 @@ export default function Home() {
   let iconStyles = { color: "white", fontSize: "2em" };
 
   const iconsArray = [
-    <FaHandshake />,
-    <FaCalculator />,
-    <FaFileContract />,
-    <FaPenRuler />,
-    <FaFileSignature />,
-    <FaHardHat />,
-    <FaHammer />,
-    <FaClipboardCheck />,
-    <FaHouseCircleCheck />,
-    <FaHeadset />,
+    <FaHandshake key="handshake" />,
+    <FaCalculator key="handshake" />,
+    <FaFileContract key="fileContract" />,
+    <FaPenRuler key="penRuler" />,
+    <FaFileSignature key="fileSignature" />,
+    <FaHardHat key="hardHat" />,
+    <FaHammer key="hammer" />,
+    <FaClipboardCheck key="clipboardCheck" />,
+    <FaHouseCircleCheck key="houseCircleCheck" />,
+    <FaHeadset key="headset" />,
   ];
 
   const handleSelection = (index: string) => {
