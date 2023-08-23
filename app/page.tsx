@@ -69,7 +69,7 @@ export default function Home() {
           <IconContext.Provider
             value={{
               color: "white",
-              className: "text-lg md:text-2xl mb-4",
+              className: "text-lg md:text-2xl mb-2 md:mb-4",
             }}
           >
             <div>{iconsArray[selectedStep - 1]}</div>
