@@ -130,7 +130,7 @@ export default function Home() {
           </IconContext.Provider>
           <div className="absolute inset-x-0 bottom-1/2 transform translate-y-1/2">
             <span
-              className={`text-white text-md md:text-2xl font-medium text-center p-2 ${
+              className={`text-white text-base md:text-2xl font-medium text-center p-2 ${
                 animationClass && "animate-fadeIn"
               }`}
             >
