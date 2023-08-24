@@ -36,11 +36,15 @@ export default function Home() {
   const [selectedStep, setSelectedStep] = useState(1);
   const [stepDetail, setStepDetail] = useState("INITIAL CONSULTATION");
   const [animationClass, setAnimationClass] = useState(true);
+  const [opacityCheck, setOpacityCheck] = useState(false);
 
   useEffect(() => {
     setAnimationClass(false);
     setAnimationClass(true);
     void document.documentElement.offsetWidth;
+    setTimeout(() => {
+      setOpacityCheck(true);
+    }, 1200);
   }, [selectedStep]);
 
   const stepStyles = [
@@ -109,6 +113,9 @@ export default function Home() {
   ];
 
   const handleSelection = (index: string) => {
+    if (parseInt(index) != selectedStep) {
+      setOpacityCheck(false);
+    }
     setAnimationClass(false);
     setSelectedStep(parseInt(index));
     setStepDetail(detailsArray[parseInt(index) - 1]);
@@ -131,8 +138,8 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-1/2 transform translate-y-1/2">
             <span
               className={`text-white text-base md:text-2xl font-medium text-center p-2 ${
-                animationClass && "animate-fadeIn"
-              }`}
+                opacityCheck ? "opacity-100" : "opacity-0"
+              } ${animationClass && "animate-fadeIn"}`}
             >
               {stepDetail}
             </span>
