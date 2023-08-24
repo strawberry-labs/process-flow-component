@@ -48,16 +48,16 @@ export default function Home() {
   }, [selectedStep]);
 
   const stepStyles = [
-    { transform: "rotate(0deg) translateY(-400%) rotate(0deg)" },
-    { transform: "rotate(36deg) translateY(-400%) rotate(-36deg)" },
-    { transform: "rotate(72deg) translateY(-400%) rotate(-72deg)" },
-    { transform: "rotate(108deg) translateY(-400%) rotate(-108deg)" },
-    { transform: "rotate(144deg) translateY(-400%) rotate(-144deg)" },
-    { transform: "rotate(180deg) translateY(-400%) rotate(-180deg)" },
-    { transform: "rotate(216deg) translateY(-400%) rotate(-216deg)" },
-    { transform: "rotate(252deg) translateY(-400%) rotate(-252deg)" },
-    { transform: "rotate(288deg) translateY(-400%) rotate(-288deg)" },
-    { transform: "rotate(324deg) translateY(-400%) rotate(-324deg)" },
+    { transform: "rotate(0deg) translateY(-375%) rotate(0deg)" },
+    { transform: "rotate(36deg) translateY(-375%) rotate(-36deg)" },
+    { transform: "rotate(72deg) translateY(-375%) rotate(-72deg)" },
+    { transform: "rotate(108deg) translateY(-375%) rotate(-108deg)" },
+    { transform: "rotate(144deg) translateY(-375%) rotate(-144deg)" },
+    { transform: "rotate(180deg) translateY(-375%) rotate(-180deg)" },
+    { transform: "rotate(216deg) translateY(-375%) rotate(-216deg)" },
+    { transform: "rotate(252deg) translateY(-375%) rotate(-252deg)" },
+    { transform: "rotate(288deg) translateY(-375%) rotate(-288deg)" },
+    { transform: "rotate(324deg) translateY(-375%) rotate(-324deg)" },
   ];
   const detailsArray = [
     "INITIAL CONSULTATION",
@@ -124,7 +124,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between px-24 bg-white">
       <div className="relative flex h-screen w-screen items-center justify-center bg-white">
         {/* Main circle that shows details */}
-        <div className="z-10 absolute flex flex-col h-64 w-64 md:h-[25rem] md:w-[25rem] drop-shadow-xl items-center place-content-center justify-center text-sm md:text-xl font-medium text-center text-white	rounded-full bg-gradient-to-r from-[#895b35] to-[#f1bf87] p-8">
+        <div className="z-10 absolute flex flex-col h-[13.5rem] w-[13.5rem] md:h-[23.5rem] md:w-[23.5rem] drop-shadow-xl items-center place-content-center justify-center text-sm md:text-xl font-medium text-center text-white	rounded-full bg-gradient-to-r from-[#895b35] to-[#f1bf87] p-8">
           <IconContext.Provider
             value={{
               color: "white",
@@ -141,7 +141,7 @@ export default function Home() {
           </IconContext.Provider>
           <div className="absolute inset-x-0 bottom-1/2 transform translate-y-1/2">
             <span
-              className={`text-white text-base md:text-2xl font-medium text-center p-2 ${
+              className={`text-white text-sm md:text-2xl font-medium text-center p-2 ${
                 opacityCheck ? "opacity-100" : "opacity-0"
               } ${animationClass && "animate-fadeIn"}`}
             >
@@ -160,7 +160,7 @@ export default function Home() {
                 handleSelection(e.currentTarget.getAttribute("data-id") || "1")
               }
               data-id={index + 1}
-              className={`flex h-10 w-10 md:h-16 md:w-16 items-center justify-center rounded-full text-center border border-gray-400 drop-shadow-lg ${
+              className={`flex h-9 w-9 md:h-16 md:w-16 items-center justify-center rounded-full text-center border border-gray-400 drop-shadow-lg ${
                 selectedStep == index + 1 ? "bg-[#323644]" : "bg-[#B9895B]"
               }`}
             >
@@ -168,13 +168,13 @@ export default function Home() {
                 src={imageArray[index]}
                 width={50}
                 height={50}
-                className="w-6 h-6 md:w-9 md:h-9"
+                className="w-5 h-5 md:w-9 md:h-9"
                 alt="Picture of the author"
               />
             </div>
           </div>
         ))}
-        <div className="-z-100 w-80 h-80 md:w-[32rem] md:h-[32rem] border border-gray-400 rounded-full"></div>
+        <div className="-z-100 w-[17rem] h-[17rem] md:w-[30rem] md:h-[30rem] border border-gray-400 rounded-full"></div>
       </div>
     </main>
   );
