@@ -131,7 +131,11 @@ export default function Home() {
               className: "text-3xl md:text-4xl mb-2 md:mb-4 -mt-14 md:-mt-20 ",
             }}
           >
-            <div className={`${animationClass && "animate-fadeIn"}`}>
+            <div
+              className={`${opacityCheck ? "opacity-100" : "opacity-0"} ${
+                animationClass && "animate-fadeIn"
+              }`}
+            >
               {numberArray[selectedStep - 1]}
             </div>
           </IconContext.Provider>
