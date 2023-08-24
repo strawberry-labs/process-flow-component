@@ -44,7 +44,7 @@ export default function Home() {
     void document.documentElement.offsetWidth;
     setTimeout(() => {
       setOpacityCheck(true);
-    }, 1200);
+    }, 750);
   }, [selectedStep]);
 
   const stepStyles = [
