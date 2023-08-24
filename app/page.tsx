@@ -1,6 +1,6 @@
 "use client"; // 👈 use it here
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 
 import Image from "next/image";
@@ -35,6 +35,14 @@ import { FaHardHat, FaHeadset } from "react-icons/fa";
 export default function Home() {
   const [selectedStep, setSelectedStep] = useState(1);
   const [stepDetail, setStepDetail] = useState("INITIAL CONSULTATION");
+  const [animationClass, setAnimationClass] = useState(true);
+
+  useEffect(() => {
+    setAnimationClass(false);
+    void document.documentElement.offsetWidth;
+    setAnimationClass(true);
+  }, [stepDetail]);
+
   const stepStyles = [
     { transform: "rotate(0deg) translateY(-400%) rotate(0deg)" },
     { transform: "rotate(36deg) translateY(-400%) rotate(-36deg)" },
@@ -49,7 +57,7 @@ export default function Home() {
   ];
   const detailsArray = [
     "INITIAL CONSULTATION",
-    "PROJECT ASSESSMENT & ESTIMATION",
+    "ASSESSMENT & ESTIMATION",
     "PROPOSAL & CONTRACT",
     "DESIGN PHASE",
     "PERMITS & APPROVALS",
@@ -101,6 +109,7 @@ export default function Home() {
   ];
 
   const handleSelection = (index: string) => {
+    setAnimationClass(false);
     setSelectedStep(parseInt(index));
     setStepDetail(detailsArray[parseInt(index) - 1]);
   };
@@ -115,10 +124,16 @@ export default function Home() {
               className: "text-3xl md:text-4xl mb-2 md:mb-4 -mt-14 md:-mt-20 ",
             }}
           >
-            <div>{numberArray[selectedStep - 1]}</div>
+            <div className={`${animationClass && "animate-fadeIn"}`}>
+              {numberArray[selectedStep - 1]}
+            </div>
           </IconContext.Provider>
           <div className="absolute inset-x-0 bottom-1/2 transform translate-y-1/2">
-            <span className="text-white text-md md:text-2xl font-medium text-center">
+            <span
+              className={`text-white text-md md:text-2xl font-medium text-center p-2 ${
+                animationClass && "animate-fadeIn"
+              }`}
+            >
               {stepDetail}
             </span>
           </div>
