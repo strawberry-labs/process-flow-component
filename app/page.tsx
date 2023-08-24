@@ -37,12 +37,6 @@ export default function Home() {
   const [stepDetail, setStepDetail] = useState("INITIAL CONSULTATION");
   const [animationClass, setAnimationClass] = useState(true);
 
-  useEffect(() => {
-    setAnimationClass(false);
-    void document.documentElement.offsetWidth;
-    setAnimationClass(true);
-  }, [stepDetail]);
-
   const stepStyles = [
     { transform: "rotate(0deg) translateY(-400%) rotate(0deg)" },
     { transform: "rotate(36deg) translateY(-400%) rotate(-36deg)" },
@@ -110,6 +104,8 @@ export default function Home() {
 
   const handleSelection = (index: string) => {
     setAnimationClass(false);
+    void document.documentElement.offsetWidth;
+    setAnimationClass(true);
     setSelectedStep(parseInt(index));
     setStepDetail(detailsArray[parseInt(index) - 1]);
   };
