@@ -32,14 +32,14 @@ export default function Home() {
   ];
   const detailsArray = [
     "INITIAL CONSULTATION",
-    "PROJECT ASSESSMENT AND ESTIMATION",
-    "PROPOSAL AND CONTRACT",
+    "PROJECT ASSESSMENT & ESTIMATION",
+    "PROPOSAL & CONTRACT",
     "DESIGN PHASE",
-    "PERMITS AND APPROVALS",
+    "PERMITS & APPROVALS",
     "SITE PREPARTION",
     "RENOVATION WORK",
     "QUALITY CONTROL",
-    "COMPLETION AND HANDOVER",
+    "COMPLETION & HANDOVER",
     "POST-RENOVATION SUPPORT",
   ];
   let iconStyles = { color: "white", fontSize: "2em" };
